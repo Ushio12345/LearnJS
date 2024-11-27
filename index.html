@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <script src="https://cdn.tailwindcss.com"></script>
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <div class="flex">
+            <div class="siderbar mb-4 border-b border-gray-200 dark:border-gray-700">
+                <ul
+                    class="flex flex-wrap -mb-px text-sm font-medium text-center"
+                    id="default-styled-tab"
+                    data-tabs-toggle="#default-styled-tab-content"
+                    data-tabs-active-classes="text-purple-600 hover:text-purple-600 dark:text-purple-500 dark:hover:text-purple-500 border-purple-600 dark:border-purple-500"
+                    data-tabs-inactive-classes="dark:border-transparent text-gray-500 hover:text-gray-600 dark:text-gray-400 border-gray-100 hover:border-gray-300 dark:border-gray-700 dark:hover:text-gray-300"
+                    role="tablist"
+                >
+                    <li class="" role="presentation">
+                        <button
+                            class="inline-block p-4 border-b-2 rounded-t-lg"
+                            id="profile-styled-tab"
+                            data-tabs-target="#styled-profile"
+                            type="button"
+                            role="tab"
+                            aria-controls="profile"
+                            aria-selected="false"
+                        >
+                            Bài 1
+                        </button>
+                    </li>
+                    <li class="" role="presentation">
+                        <button
+                            class="inline-block p-4 border-b-2 rounded-t-lg hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300"
+                            id="dashboard-styled-tab"
+                            data-tabs-target="#styled-dashboard"
+                            type="button"
+                            role="tab"
+                            aria-controls="dashboard"
+                            aria-selected="false"
+                        >
+                            Bài 2
+                        </button>
+                    </li>
+                    <li class="" role="presentation">
+                        <button
+                            class="inline-block p-4 border-b-2 rounded-t-lg hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300"
+                            id="settings-styled-tab"
+                            data-tabs-target="#styled-settings"
+                            type="button"
+                            role="tab"
+                            aria-controls="settings"
+                            aria-selected="false"
+                        >
+                            Bài 3
+                        </button>
+                    </li>
+                    <li role="presentation">
+                        <button
+                            class="inline-block p-4 border-b-2 rounded-t-lg hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300"
+                            id="contacts-styled-tab"
+                            data-tabs-target="#styled-contacts"
+                            type="button"
+                            role="tab"
+                            aria-controls="contacts"
+                            aria-selected="false"
+                        >
+                            Bài 4
+                        </button>
+                    </li>
+                    <li role="presentation">
+                        <button
+                            class="inline-block p-4 border-b-2 rounded-t-lg hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300"
+                            id="contacts-styled-tab"
+                            data-tabs-target="#styled-a"
+                            type="button"
+                            role="tab"
+                            aria-controls="contacts"
+                            aria-selected="false"
+                        >
+                            Bài 5
+                        </button>
+                    </li>
+                </ul>
+            </div>
+            <div id="default-styled-tab-content">
+                <div class="">
+                    <div
+                        class="bai1 hidden p-4 rounded-lg bg-gray-50 dark:bg-gray-800"
+                        id="styled-profile"
+                        role="tabpanel"
+                        aria-labelledby="profile-tab"
+                    >
+                        <div class="">
+                            <h2 class="text-center text-3xl my-3">Tính lương</h2>
+                            <input
+                                class="appearance-none block w-full bg-gray-200 text-gray-700 border border-red-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+                                id="salary"
+                                type="text"
+                                placeholder="Nhập lương 1 ngày"
+                            />
+                            <p class="errorInput text-red-500 text-xs italic"></p>
+                        </div>
+                        <div>
+                            <input
+                                class="appearance-none block w-full bg-gray-200 text-gray-700 border border-red-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+                                id="days"
+                                type="number"
+                                placeholder="Số ngày làm"
+                            />
+                            <p class="errorDay text-red-500 text-xs italic"></p>
+                            <button id="calculate-btn" onclick="calculateSalaryBai1()" class="px-4 py-2 bg-blue-500 text-white rounded">
+                                Tính Lương
+                            </button>
+                        </div>
+                        <p class="result"></p>
+                    </div>
+                </div>
+                <div class="hidden p-4 rounded-lg bg-gray-50 dark:bg-gray-800" id="styled-dashboard" role="tabpanel" aria-labelledby="dashboard-tab">
+                    <h2 class="text-center text-3xl my-3">Tính trung bình</h2>
+                    <input
+                        class="appearance-none block w-full bg-gray-200 text-gray-700 border border-red-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+                        id="num1"
+                        type="number"
+                        placeholder="Số thứ 1"
+                    />
+                    <input
+                        class="appearance-none block w-full bg-gray-200 text-gray-700 border border-red-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+                        id="num2"
+                        type="number"
+                        placeholder="Số thứ 2"
+                    />
+                    <input
+                        class="appearance-none block w-full bg-gray-200 text-gray-700 border border-red-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+                        id="num3"
+                        type="number"
+                        placeholder="Số thứ 3"
+                    />
+                    <input
+                        class="appearance-none block w-full bg-gray-200 text-gray-700 border border-red-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+                        id="num4"
+                        type="number"
+                        placeholder="Số thứ 4"
+                    />
+                    <input
+                        class="appearance-none block w-full bg-gray-200 text-gray-700 border border-red-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+                        id="num5"
+                        type="number"
+                        placeholder="Số thứ 5"
+                    />
+                    <p class="err text-red-500"></p>
+                    <button id="calculate-avg" onclick="avg()" class="px-4 py-2 bg-blue-500 text-white rounded">Tính Trung Bình</button>
+
+                    <!--  -->
+                    <h3 class="result2 text-2xl text-blue-300"></h3>
+                </div>
+                <div class="hidden p-4 rounded-lg bg-gray-50 dark:bg-gray-800" id="styled-settings" role="tabpanel" aria-labelledby="settings-tab">
+                    <h2 class="text-center text-3xl my-3">Đổi tiền</h2>
+                    <input
+                        class="appearance-none block w-full bg-gray-200 text-gray-700 border border-red-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+                        id="usd"
+                        type="number"
+                        placeholder="Nhập số USD cần đổi"
+                    />
+
+                    <p class="errMon text-red-500"></p>
+                    <button id="calculate-vnd" onclick="changeMoney()" class="px-4 py-2 bg-blue-500 text-white rounded">Quy đổi</button>
+
+                    <!--  -->
+                    <h3 class="result3 text-2xl text-blue-300"></h3>
+                </div>
+                <div class="hidden p-4 rounded-lg bg-gray-50 dark:bg-gray-800" id="styled-contacts" role="tabpanel" aria-labelledby="contacts-tab">
+                    <h2 class="text-center text-3xl my-3">Tính chu vi, diện tích hình chữ nhật</h2>
+                    <input
+                        class="appearance-none block w-full bg-gray-200 text-gray-700 border border-red-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+                        id="dai"
+                        type="number"
+                        placeholder="Nhập chiều dài"
+                    />
+                    <input
+                        class="appearance-none block w-full bg-gray-200 text-gray-700 border border-red-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+                        id="rong"
+                        type="number"
+                        placeholder="Nhập chiều rộng"
+                    />
+
+                    <p class="err4 text-red-500"></p>
+                    <button id="" onclick="tinhCVDT()" class="px-4 py-2 bg-blue-500 text-white rounded">Tính</button>
+
+                    <!--  -->
+                    <h3 class="cv text-2xl text-blue-300"></h3>
+                    <h3 class="dt text-2xl text-blue-300"></h3>
+                </div>
+                <div class="hidden p-4 rounded-lg bg-gray-50 dark:bg-gray-800" id="styled-a" role="tabpanel" aria-labelledby="contacts-tab">
+                    <h2 class="text-center text-3xl my-3">Tổng 2 số</h2>
+                    <input
+                        class="appearance-none block w-full bg-gray-200 text-gray-700 border border-red-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+                        id="num"
+                        type="number"
+                        placeholder="Nhập số có 2 chữ số"
+                    />
+
+                    <p class="err5 text-red-500"></p>
+                    <button id="" onclick="tong2so()" class="px-4 py-2 bg-blue-500 text-white rounded">Tính</button>
+
+                    <!--  -->
+                    <h3 class="tong text-2xl text-blue-300"></h3>
+                </div>
+            </div>
+        </div>
+        <script src="Js.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.js"></script>
+    </body>
+</html>
